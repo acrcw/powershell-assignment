@@ -119,7 +119,7 @@ $VM = Add-AzVMNetworkInterface -VM $VM -Id $nic.Id
 $VM = Set-AzVMOSDisk -VM $VM -Name "osdisk1" -CreateOption FromImage -Windows
 
 # Create the VM
-$GETVM=New-AzVM -ResourceGroupName $resource_group_name -Location $resource_group_Location -VM $VM
+$GETVM=New-AzVM -ResourceGroupName $resource_group_name -Location $resource_group_Location -VM $VM -ErrorAction SilentlyContinue
 # Wait for NIC creation
 Write-Host "Waiting for VM to be created..."
 do {
